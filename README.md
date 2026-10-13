@@ -132,7 +132,6 @@ The report is organised into five pages:
 ```text
 zepto-ecommerce-sales-analysis/
 ├── README.md
-├── .gitignore
 ├── ZeptoPYTHON.ipynb
 ├── python_to_sql.py
 ├── Zeptoproject.sql

@@ -1,85 +1,131 @@
 # Zepto E-Commerce Sales Analysis
 
-An end-to-end data analytics project using **Python, MySQL, Excel, and Power BI** to analyse e-commerce sales, customer behaviour, product performance, store operations, payment methods, and promotions.
+An end-to-end data analytics project focused on understanding e-commerce sales performance, customer purchasing behaviour, product performance, store operations, and promotional effectiveness using Python, MySQL and Power BI.
 
 ## Project Overview
 
-This project follows a complete data analytics workflow, from data inspection and cleaning to SQL analysis and interactive Power BI reporting.
+This project demonstrates an end-to-end data analytics workflow, starting with raw data inspection and cleaning in Python, followed by database loading, SQL-based business analysis, and interactive reporting in Power BI.
 
-The project uses six related datasets to explore sales performance and identify business patterns across products, customers, stores, payments, and promotions.
+The project uses six related datasets covering sales transactions, customers, products, payments, promotions, and stores to explore business performance from multiple perspectives.
+
+## Business Objective
+
+The objective of this project is to analyse e-commerce sales and operational data to understand business performance, identify purchasing patterns, and support data-driven decision-making.
+
+The analysis focuses on the following business questions:
+
+- **Sales Performance:** How do sales and order volumes change over time, and which locations contribute most to business performance?
+- **Product Performance:** Which products and categories perform well, and where are opportunities to improve product sales?
+- **Customer Behaviour:** How do customer segments differ, and which customers contribute most to revenue?
+- **Store & Delivery Operations:** How do stores perform across locations, and what patterns can be observed in delivery times and order statuses?
+- **Payments & Promotions:** Which payment methods are commonly used, and how are promotions and discounts associated with sales performance?
+
+The overall goal is to transform raw datasets into structured, reliable, and actionable business insights.
 
 ## Tools & Technologies
 
-- **Python:** Pandas, Jupyter Notebook
-- **Database:** MySQL
-- **SQL:** Joins, aggregations, CTEs, window functions, and ranking
-- **Excel:** Data review and cleaned-data exports
-- **Power BI:** Interactive dashboards, KPI cards, DAX measures, and slicers
+| Tool | Purpose |
+|---|---|
+| Python | Data inspection, cleaning, validation, transformation, and file processing |
+| MySQL | Data validation, business queries, and analytical reporting |
+| Power BI | Interactive reporting and visual analysis |
 
 ## Dataset Description
 
-The project uses six datasets:
+The project uses six related datasets:
 
-| Dataset | Description |
+| Dataset | Key Information |
 |---|---|
-| Sales | Order dates, customer IDs, product IDs, quantities, prices, discounts, revenue, delivery time, and order status |
-| Customers | Customer details, city, sign-up date, and customer segment |
+| Sales | Orders, dates, customers, products, stores, quantities, prices, discounts, amounts, delivery times, and order statuses |
+| Customers | Customer details, cities, sign-up dates, and customer segments |
 | Products | Product names, categories, brands, and MRP |
 | Payments | Payment IDs and payment methods |
-| Promotions | Promotion IDs, promotion types, and discount percentages |
-| Stores | Store details, city, and opening year |
+| Promotions | Promotion types and discount percentages |
+| Stores | Store names, locations, and opening years |
 
-The working dataset contains approximately 650,000 sales records, 25,000 customers, 2,200 products, 5 payment methods, 120 promotions, and 180 stores.
+The working datasets contain approximately 650,000 sales records, 25,000 customers, 2,200 products, 5 payment methods, 120 promotions, and 180 stores.
+
+Dataset Source
+Dataset link: https://www.kaggle.com/datasets/dhruvsinghalanalyst/zepto-sales-data
 
 ## Project Workflow
 
-### 1. Python — Data Inspection and Cleaning
+### 1. Data Inspection & Preparation — Python
 
-The `ZeptoPYTHON.ipynb` notebook covers:
+The data preparation stage focuses on understanding the structure and reliability of the six datasets before analysis.
 
-- Loading all six CSV datasets.
-- Inspecting dataset dimensions, sample records, data types, and summary statistics.
+Key activities include:
+
+- Loading and inspecting datasets.
+- Reviewing dataset dimensions, data types, and summary statistics.
 - Checking missing values and duplicate records.
-- Analysing order-status distribution.
-- Checking selected sales fields for negative values.
-- Validating customer IDs between sales and customer datasets.
-- Replacing missing promotion IDs with `No Promotion`.
-- Converting sign-up and order date columns to datetime.
-- Validating the cleaned data.
-- Exporting cleaned datasets to CSV files and an Excel workbook.
+- Examining order-status distribution and potential data-quality issues.
+- Validating customer references between related datasets.
+- Handling missing promotion identifiers.
+- Converting date columns into appropriate date formats.
+- Performing final validation and exporting the cleaned datasets.
 
-### 2. Excel — Cleaned Data Review
+**Deliverable:** Deliverable: ZeptoPYTHON.ipynb
 
-The cleaned datasets are exported as individual CSV files and as one Excel workbook containing separate worksheets for customers, sales, products, payments, promotions, and stores.
+### 2. Database Integration — MySQL
 
-### 3. MySQL — Data Loading and SQL Analysis
+The cleaned datasets are loaded into MySQL using a Python script, creating a structured foundation for business analysis across sales, customers, products, stores, payments, and promotions.
 
-The `python_to_sql.py` script loads the cleaned CSV files into MySQL.
+**Deliverable:** python_to_sql.py
 
-SQL analysis includes:
+### 3. Business Analysis — SQL
 
-- Data quality checks and row counts.
-- Revenue, order, customer, and product KPIs.
-- Sales analysis by category, city, and store.
-- Monthly sales trends.
-- Top-performing products.
-- Repeat customer analysis.
-- Average order value.
-- Payment method and promotion performance.
-- Customer segmentation.
-- CTEs and window functions.
-- Month-over-month revenue growth.
-- Product rankings and category contribution analysis.
+SQL is used to examine business performance across sales, products, customers, stores, payments, and promotions.
 
-### 4. Power BI — Interactive Report
+The analysis covers:
 
-The Power BI report contains five pages:
+- Overall sales and order performance.
+- Sales distribution across product categories, cities, and stores.
+- Monthly sales trends and changes in performance over time.
+- Best-performing products and categories.
+- Customer purchasing patterns and repeat purchases.
+- Average order value and customer segmentation.
+- Payment method usage and promotion performance.
+- Store operations and delivery-related metrics.
 
-1. **Executive Overview** — Overall business performance and key KPIs.
-2. **Product & Category Performance** — Product and category sales analysis.
-3. **Customer Analysis** — Customer behaviour and purchasing patterns.
-4. **Store & Operations** — Store performance and delivery-related metrics.
-5. **Payment & Promotions** — Payment methods, discounts, and promotion analysis.
+**Deliverable:** Zeptoproject.sql
+
+### 4. Interactive Reporting — Power BI
+
+The Power BI report presents key metrics and analytical findings in an interactive, business-oriented format.
+
+The report is organised into five pages:
+
+1. **Executive Overview** — Key performance indicators, monthly revenue trends, top products, revenue by city and category, and payment distribution.
+2. **Product & Category Performance** — Category quantity and revenue, top products, and revenue by brand.
+3. **Customer Analysis** — Customer-segment revenue, top customers, customer counts by city, and revenue by city.
+4. **Store & Operations** —  City and store performance, order volumes, average order value, delivery times, and order-status distribution.
+5. **Payment & Promotions** —  Orders and revenue by payment method, along with revenue and order distribution by promotion type.
+
+**Deliverable:** Power BI report screenshots.
+
+## Key Findings
+
+### Key Performance Indicators
+
+| Metric | Value Displayed |
+|---|---:|
+| Total Revenue | ₹121.69 crore |
+| Total Customers | 25,000 |
+| Total Orders | Approximately 6.05 lakh |
+| Total Products | 2,200 |
+| Average Order Value | Approximately ₹2,013 |
+| Average Delivery Time | Approximately 21 minutes |
+
+### Key Observations
+
+- **Sales Performance:** The monthly revenue chart presents revenue trends and month-over-month movement, helping compare stronger and weaker periods across the selected reporting range.
+- **Product & Category Performance:** The report compares eight product categories and presents product- and brand-level rankings to highlight relative sales performance.
+- **Customer Behaviour:** The report compares Regular, Occasional, and Premium customer segments. Regular customers account for approximately 59.9% of the segment revenue shown in the customer analysis chart.
+- **City & Store Performance:** City-level and store-level views support comparisons of revenue, order volumes, average order value, and delivery times.
+- **Payment Preferences:** UPI represents approximately 65.08% of orders in the displayed payment-method distribution, making it the largest payment category in that chart.
+- **Order Status:** The displayed order-status distribution shows approximately 93% Delivered, 5.02% Cancelled, and 1.98% Returned.
+- **Promotion Performance:** The report compares Flat, Free Delivery, Percentage, and BOGO promotions by revenue and order volume, supporting further evaluation of promotional activity.
 
 ## Repository Structure
 
@@ -87,78 +133,28 @@ The Power BI report contains five pages:
 zepto-ecommerce-sales-analysis/
 ├── README.md
 ├── .gitignore
-├── python/
-│   ├── ZeptoPYTHON.ipynb
-│   └── python_to_sql.py
-├── sql/
-│   └── Zeptoproject.sql
-├── power-bi/
-│   ├── Zepto_Sales_Analysis.pbix
-│   └── screenshots/
-├── excel/
-│   └── Zepto_Cleaned_Data.xlsx
-└── docs/
-    └── data_dictionary.md
+├── ZeptoPYTHON.ipynb
+├── python_to_sql.py
+├── Zeptoproject.sql
+└── power-bi/
+    └── screenshots/
 ```
 
-Adjust the folder and file names to match your actual repository.
+## How to Review the Project
+1. Read this README to understand the business objective and report outcomes.
+2. Open ZeptoPYTHON.ipynb to review data preparation and validation.
+3. Review python_to_sql.py to understand how cleaned files are loaded into MySQL.
+4. Explore Zeptoproject.sql to review the business analysis.
+5. View the report screenshots or open the linked .pbix file in Power BI Desktop.
 
-## How to Run the Project
+## Data & Metric Considerations
 
-### Prerequisites
+Revenue, order counts, and other KPIs depend on the metric definitions and filters used. For meaningful comparisons between SQL and Power BI, the same order-status filters, revenue fields, and calculation rules should be applied consistently.
 
-- Python installed
-- MySQL Server installed
-- MySQL database named `zepto_analytics`
-- Power BI Desktop
+Missing promotion identifiers are handled separately from actual promotion records to distinguish orders without an assigned promotion from orders associated with a promotion.
 
-Install the required Python packages:
-
-```bash
-pip install pandas openpyxl sqlalchemy mysql-connector-python
-```
-
-### Execution Steps
-
-1. Place the six source CSV files in the folder expected by the Python notebook.
-2. Open `ZeptoPYTHON.ipynb` and run the cells from beginning to end.
-3. Verify that the cleaned CSV files and Excel workbook have been generated.
-4. Configure the MySQL connection in `python_to_sql.py` using your local database credentials.
-5. Ensure the loading script reads from the cleaned-data folder.
-6. Run the Python loading script:
-
-   ```bash
-   python python_to_sql.py
-   ```
-
-7. Open `Zeptoproject.sql` in your MySQL client and execute the required queries.
-8. Open the Power BI report and configure the data source paths or database connection for your computer.
-
-## Important Metric Definitions
-
-Revenue can refer to net revenue (`NetAmount`) or gross sales (`GrossAmount`). Order counts and revenue may also vary depending on whether all order statuses or only delivered orders are included.
-
-Use consistent definitions and filters when comparing SQL results with Power BI measures.
-
-## Key Learning Outcomes
-
-- Data profiling and cleaning using Pandas.
-- Handling missing values and converting date columns.
-- Exporting cleaned datasets for further analysis.
-- Loading data into MySQL using Python.
-- Writing SQL queries for business analysis.
-- Applying CTEs and window functions.
-- Building interactive Power BI reports.
-- Connecting Python, SQL, Excel, and Power BI in one analytics workflow.
-
-## Future Improvements
-
-- Standardise KPI definitions across SQL and Power BI.
-- Document business rules and metric calculations.
-- Add screenshots of the Power BI report pages.
-- Document validated findings and business recommendations.
-- Store database credentials securely using environment variables.
+The dataset covers a defined reporting period and may not represent the complete or current operations of Zepto. This portfolio analysis should not be interpreted as an official company report.
 
 ## Disclaimer
 
-This project is intended for learning and portfolio demonstration. Business findings and recommendations should be based on validated data and clearly documented metric definitions.
+This is a portfolio analytics project using a Zepto-related e-commerce dataset. It is intended for educational and demonstration purposes and should not be interpreted as an official business report or as verified findings published by Zepto.

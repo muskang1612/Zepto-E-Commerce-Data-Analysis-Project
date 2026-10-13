@@ -46,6 +46,7 @@ The project uses six related datasets:
 The working datasets contain approximately 650,000 sales records, 25,000 customers, 2,200 products, 5 payment methods, 120 promotions, and 180 stores.
 
 Dataset Source
+
 Dataset link: https://www.kaggle.com/datasets/dhruvsinghalanalyst/zepto-sales-data
 
 ## Project Workflow
@@ -65,7 +66,7 @@ Key activities include:
 - Converting date columns into appropriate date formats.
 - Performing final validation and exporting the cleaned datasets.
 
-**Deliverable:** Deliverable: ZeptoPYTHON.ipynb
+**Deliverable:** ZeptoPYTHON.ipynb
 
 ### 2. Database Integration — MySQL
 

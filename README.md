@@ -145,7 +145,7 @@ zepto-ecommerce-sales-analysis/
 2. Open ZeptoPYTHON.ipynb to review data preparation and validation.
 3. Review python_to_sql.py to understand how cleaned files are loaded into MySQL.
 4. Explore Zeptoproject.sql to review the business analysis.
-5. View the report screenshots or open the linked .pbix file in Power BI Desktop.
+5. View the report screenshots of Power BI Desktop.
 
 ## Data & Metric Considerations
 
